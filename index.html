@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Shooter</title>
+  <link rel="stylesheet" href="/css/index.css" />
+  <script src="/js/index.js"defer> </script>
+</head>
+
+<body>
+  <div class="modal">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="playerName" placeholder="Your name..." />
+    <br>
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <script>
+    document.getElementById("startBtn").addEventListener("click", () => {
+      const name = document.getElementById("playerName").value.trim();
+      if (!name) return alert("Please enter your name!");
+      localStorage.setItem("playerName", name);
+      window.location.href = "game.html";
+    });
+  </script>
+</body>
+</html>

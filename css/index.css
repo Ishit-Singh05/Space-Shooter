@@ -1,0 +1,39 @@
+body {
+      margin: 0;
+      height: 100vh;
+      background: url("../images/background2.jpg") no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(8px) brightness(0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Poppins, sans-serif;
+    }
+
+    .modal {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      padding: 30px 50px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #00ffcc;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
