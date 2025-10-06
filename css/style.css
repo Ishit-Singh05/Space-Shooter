@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url("/images/background2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+#gameArea {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#ui {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 20px;
+  z-index: 100;
+}
+
+#player {
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+  height: 100px;
+  background: url("/images/Spaceship.png") center/contain no-repeat;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.enemy,
+.bullet,
+.healthkit {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.enemy {
+  width: 100px;
+  height: 100px;
+  background-image: url("/images/asteroid.png");
+}
+
+.bullet {
+  width: 6px;
+  height: 12px;
+  background: white;
+  border-radius: 2px;
+}
+
+.healthkit {
+  width: 92px;
+  height: 92px;
+  background-image: url("/images/healthkit.png");
+}
+
+#score{
+    font-size: 50px;
+    color: red;
+    margin: 50px;
+}
+#health{
+    font-size: 50px;
+    color: rgb(0, 195, 255);
+    margin: 50px;
+}
+
+#score-png{
+  width: 150px;
+  height: 80px;
+}
+#health-png{
+  width: 100px;
+  height: 80px;
+}
+
+#score, #health {
+    display: inline-flex;
+    align-items: center; 
+    font-size: 50px;
+    margin: 50px;
+    gap: 10px;
+}
+
