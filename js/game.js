@@ -52,3 +52,34 @@ setInterval(() => {
   gameArea.appendChild(kit);
   healthkits.push(kit);
 }, 5200);
+
+
+// Collision helper
+function isColliding(a, b) {
+  const rectA = a.getBoundingClientRect();
+  const rectB = b.getBoundingClientRect();
+  return !(
+    rectA.bottom < rectB.top ||
+    rectA.top > rectB.bottom ||
+    rectA.right < rectB.left ||
+    rectA.left > rectB.right
+  );
+}
+
+// Game over → save score and redirect
+function gameOver() {
+  const name = localStorage.getItem("playerName");
+
+  // Get previous leaderboard or empty array
+  const leaderboardData = JSON.parse(localStorage.getItem("leaderboardData") || "[]");
+
+  // Add current player & score
+  leaderboardData.push({ name, score });
+
+  // Save back to localStorage
+  localStorage.setItem("leaderboardData", JSON.stringify(leaderboardData));
+  localStorage.setItem("lastScore", score);
+
+  // Redirect to leaderboard page
+  window.location.href = "leaderboard.html";
+}
