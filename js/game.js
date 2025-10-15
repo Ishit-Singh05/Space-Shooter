@@ -83,3 +83,78 @@ function gameOver() {
   // Redirect to leaderboard page
   window.location.href = "leaderboard.html";
 }
+
+// Main game loop
+function animate() {
+  const playerX = mouseX - player.offsetWidth / 2;
+  player.style.left = Math.min(Math.max(playerX, 0), window.innerWidth - player.offsetWidth) + "px";
+
+  // Move bullets
+  bullets.forEach((bullet, i) => {
+    bullet.style.top = bullet.offsetTop - 10 + "px";
+    if (bullet.offsetTop < -20) {
+      bullet.remove();
+      bullets.splice(i, 1);
+    }
+  });
+
+  // Move enemies
+  enemies.forEach((enemy, i) => {
+    enemy.style.top = enemy.offsetTop + 2 + "px";
+    if (enemy.offsetTop > window.innerHeight) {
+      enemy.remove();
+      enemies.splice(i, 1);
+      health -= 10;
+      if (health <= 0) return gameOver();
+    }
+  });
+
+  // Move healthkits
+  healthkits.forEach((kit, i) => {
+    kit.style.top = kit.offsetTop + 2 + "px";
+    if (kit.offsetTop > window.innerHeight) {
+      kit.remove();
+      healthkits.splice(i, 1);
+    }
+  });
+
+  // Bullet–Enemy collision
+  enemies.forEach((enemy, ei) => {
+    bullets.forEach((bullet, bi) => {
+      if (isColliding(enemy, bullet)) {
+        enemy.remove();
+        bullet.remove();
+        enemies.splice(ei, 1);
+        bullets.splice(bi, 1);
+        score++;
+      }
+    });
+  });
+
+  // Bullet–Healthkit collision
+  healthkits.forEach((kit, ki) => {
+    bullets.forEach((bullet, bi) => {
+      if (isColliding(kit, bullet)) {
+        kit.remove();
+        bullet.remove();
+        healthkits.splice(ki, 1);
+        bullets.splice(bi, 1);
+        health = Math.min(100, health + 10);
+      }
+    });
+  });
+
+  // Update UI
+  const scoreNum = document.getElementById("score-num");
+  const healthNum = document.getElementById("health-num");
+
+  // Update UI in animate()
+  scoreNum.textContent = score;
+  healthNum.textContent = health;
+
+
+  requestAnimationFrame(animate);
+}
+
+// Start animation
+animate();
