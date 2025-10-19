@@ -9,20 +9,16 @@
 </head>
 
 <body>
-  <div class="modal">
-    <h2>Enter Your Name</h2>
-    <input type="text" id="playerName" placeholder="Your name..." />
-    <br>
-    <button id="startBtn">Start Game</button>
-  </div>
+  <img src="images/Astro (3) (1).png" alt="Game Logo" id="logo">
 
-  <script>
-    document.getElementById("startBtn").addEventListener("click", () => {
-      const name = document.getElementById("playerName").value.trim();
-      if (!name) return alert("Please enter your name!");
-      localStorage.setItem("playerName", name);
-      window.location.href = "game.html";
-    });
-  </script>
+  <div class="modal">
+    <div class="h2">ENTER YOUR NAME</div>
+  <input type="text" id="playerName" placeholder="Your name..." />
+  <div id="errorMsg"></div>
+
+  <button id="startBtn">Start Game</button>
+</div>
+
+  
 </body>
 </html>

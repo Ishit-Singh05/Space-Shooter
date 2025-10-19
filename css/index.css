@@ -4,36 +4,82 @@ body {
       background: url("../images/background2.jpg") no-repeat center center fixed;
       background-size: cover;
       backdrop-filter: blur(8px) brightness(0.6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: Poppins, sans-serif;
+      position: relative;
+      overflow: hidden;
     }
 
     .modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: rgba(255, 255, 255, 0.1);
-      border: 2px solid white;
-      padding: 30px 50px;
+      padding: 50px 70px;
       border-radius: 15px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       color: white;
+      gap: 10px;
       backdrop-filter: blur(10px);
+      z-index: 2;
     }
 
     input {
       padding: 10px;
       border-radius: 8px;
       border: none;
-      width: 200px;
+      width: 250px;
+      height: 30px;
       text-align: center;
+      border: 2px solid rgb(234, 43, 107);
+      color: rgb(234, 43, 107);
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    input:focus{
+      border: 2px solid cyan;
+      outline: none;
     }
 
     button {
       margin-top: 15px;
       padding: 10px 20px;
       border: none;
-      background: #00ffcc;
+      background: rgb(234, 43, 65);
+      color: white;
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
+      box-shadow: 0 0 5px cyan;
+    }
+
+    button:hover {
+      background: cyan;
+      box-shadow: 0 0 10px rgb(234, 43, 65);
+      color: black;
+    }
+
+    #logo {
+      position: absolute;
+      left: 52%;
+      bottom: 30%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: auto;
+      z-index: 1;
+    }
+    .h2{
+      font-size: 30px;
+      font-weight: 600;
+      color: cyan;
+      text-shadow: 0 0 10px rgb(234, 43, 65);
+    }
+    #errorMsg {
+      color: red; 
+      font-size: 14px; 
     }

@@ -81,7 +81,7 @@ function gameOver() {
   localStorage.setItem("lastScore", score);
 
   // Redirect to leaderboard page
-  window.location.href = "leaderboard.html";
+  window.location.href = "../leaderboard.html";
 }
 
 // Main game loop
