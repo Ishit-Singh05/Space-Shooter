@@ -5,7 +5,7 @@
 body {
   margin: 0;
   overflow: hidden;
-  background: url("/images/background2.jpg") no-repeat center center fixed;
+  background: url("/images/background2.jpg");
   background-size: cover;
   font-family: Arial, sans-serif;
   color: white;
@@ -66,31 +66,33 @@ body {
   background-image: url("/images/healthkit.png");
 }
 
-#score{
-    font-size: 50px;
-    color: red;
-    margin: 50px;
-}
-#health{
-    font-size: 50px;
-    color: rgb(0, 195, 255);
-    margin: 50px;
+#score {
+  font-size: 50px;
+  color: red;
+  margin: 50px;
 }
 
-#score-png{
+#health {
+  font-size: 50px;
+  color: rgb(0, 195, 255);
+  margin: 50px;
+}
+
+#score-png {
   width: 150px;
   height: 80px;
 }
-#health-png{
+
+#health-png {
   width: 100px;
   height: 80px;
 }
 
-#score, #health {
-    display: inline-flex;
-    align-items: center; 
-    font-size: 50px;
-    margin: 50px;
-    gap: 10px;
+#score,
+#health {
+  display: inline-flex;
+  align-items: center;
+  font-size: 50px;
+  margin: 50px;
+  gap: 10px;
 }
-

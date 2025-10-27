@@ -14,7 +14,6 @@ startBtn.addEventListener("click", () => {
   window.location.href = "game.html";
 });
 
-// Optional: remove error as user types
 playerNameInput.addEventListener("input", () => {
   if (playerNameInput.value.trim() !== "") {
     errorMsg.textContent = "";

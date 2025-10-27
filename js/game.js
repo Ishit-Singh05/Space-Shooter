@@ -148,7 +148,6 @@ function animate() {
   const scoreNum = document.getElementById("score-num");
   const healthNum = document.getElementById("health-num");
 
-  // Update UI in animate()
   scoreNum.textContent = score;
   healthNum.textContent = health;
 

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: url("../images/background2.jpg") no-repeat center center fixed;
+    background: url("../images/background2.jpg");
     background-size: cover;
     backdrop-filter: blur(8px) brightness(0.6);
     display: flex;
@@ -70,21 +70,17 @@ button:hover {
 
 .player-name {
     color: rgb(234, 43, 65);
-    /* red like your button */
     font-weight: bold;
 }
 
 .player-score {
     color: cyan;
-    /* neon cyan for points */
     font-weight: bold;
     margin-left: 5px;
-    /* small space after dash */
 }
 
 #results p {
     display: flex;
     justify-content: space-around;
-    /* push name to left, score to right */
     font-size: 20px;
 }
